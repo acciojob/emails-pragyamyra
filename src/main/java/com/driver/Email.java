@@ -1,6 +1,5 @@
 package com.driver;
 
-import java.util.HashMap;
 
 public class Email {
 
@@ -8,8 +7,16 @@ public class Email {
     private String password;
 
     public Email(String emailId){
-        this.emailId = emailId;
+        this.emailId= emailId;
         this.password = "Accio@123";
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmailId() {
@@ -22,7 +29,7 @@ public class Email {
 
     public void changePassword(String oldPassword, String newPassword){
         //Change password only if the oldPassword is equal to current password and the new password meets all of the following:
-        if(newPassword.length()<8 || !oldPassword.equals(password)){
+        if(newPassword.length()<8 || !oldPassword.equals(getPassword())){
             return;
         }
 
@@ -44,7 +51,7 @@ public class Email {
             }
 
             if(lowCount!=0 && uppCount!=0 && intCount!=0 && spChar!=0){
-                password=newPassword;
+                setPassword(newPassword);
             }
 
 
