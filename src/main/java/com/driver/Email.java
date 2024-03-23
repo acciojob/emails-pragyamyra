@@ -1,5 +1,7 @@
 package com.driver;
 
+import java.util.HashMap;
+
 public class Email {
 
     private String emailId;
@@ -20,6 +22,33 @@ public class Email {
 
     public void changePassword(String oldPassword, String newPassword){
         //Change password only if the oldPassword is equal to current password and the new password meets all of the following:
+        if(newPassword.length()<8 || !oldPassword.equals(password)){
+            return;
+        }
+
+            int uppCount=0;
+            int lowCount=0;
+            int intCount=0;
+            int spChar=0;
+
+            for(int i=0;i<newPassword.length();i++){
+                char ch= newPassword.charAt(i);
+                if(ch>='a' && ch<='z')
+                    lowCount++;
+                if(ch>='A' && ch<='Z')
+                    uppCount++;
+                if(ch>='0' && ch<='9')
+                    intCount++;
+                else
+                    spChar++;
+            }
+
+            if(lowCount!=0 && uppCount!=0 && intCount!=0 && spChar!=0){
+                password=newPassword;
+            }
+
+
+
         // 1. It contains at least 8 characters
         // 2. It contains at least one uppercase letter
         // 3. It contains at least one lowercase letter
