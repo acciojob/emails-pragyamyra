@@ -74,14 +74,7 @@ public class Gmail extends Email {
     public int findMailsBetweenDates(Date start, Date end){
         //find number of mails in the inbox which are received between given dates
         //It is guaranteed that start date <= end date
-//        int count=0;
-//        for (Mail m : Inbox) {
-//            Date date = m.date;
-//            if ((date.after(start) && date.before(end)) || (!date.after(start) && !date.before(end))) {
-//                count++;
-//            }
-//        }
-//        return count;
+//
         int count=0;
         for(Mail mail:Inbox)
         {
@@ -108,7 +101,7 @@ public class Gmail extends Email {
 
     public void emptyTrash(){
         // clear all mails in the trash
-        Trash.clear();
+        Trash = new ArrayList<>();
 
     }
 
