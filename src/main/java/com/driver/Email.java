@@ -33,24 +33,24 @@ public class Email {
             return;
         }
 
-            int uppCount=0;
-            int lowCount=0;
-            int intCount=0;
-            int spChar=0;
+            boolean uppCount= false;
+            boolean  lowCount= false;
+            boolean intCount= false;
+            boolean spChar= false;
 
             for(int i=0;i<newPassword.length();i++){
                 char ch= newPassword.charAt(i);
                 if(ch>='a' && ch<='z')
-                    lowCount++;
+                    lowCount=true;
                 if(ch>='A' && ch<='Z')
-                    uppCount++;
+                    uppCount=true;
                 if(ch>='0' && ch<='9')
-                    intCount++;
+                    intCount=true;
                 else
-                    spChar++;
+                    spChar=true;
             }
 
-            if(lowCount!=0 && uppCount!=0 && intCount!=0 && spChar!=0){
+            if(lowCount && uppCount && intCount && spChar){
                 setPassword(newPassword);
             }
 

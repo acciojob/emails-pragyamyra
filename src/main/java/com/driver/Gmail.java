@@ -3,6 +3,7 @@ package com.driver;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 public class Gmail extends Email {
 
     int inboxCapacity;//maximum number of mails inbox can store
@@ -55,7 +56,8 @@ public class Gmail extends Email {
         if(Inbox.isEmpty()){
             return null;
         }
-        return Inbox.get(0).message;
+        return Inbox.get(Inbox.size()-1).message;
+
 
     }
 
@@ -64,8 +66,8 @@ public class Gmail extends Email {
         if(Inbox.isEmpty())
             return null;
         // Else, return the message of the oldest mail present in the inbox
-        return Inbox.get(Inbox.size()-1).message;
 
+        return Inbox.get(0).message;
     }
 
     public int findMailsBetweenDates(Date start, Date end){
@@ -102,5 +104,19 @@ public class Gmail extends Email {
     public int getInboxCapacity() {
         // Return the maximum number of mails that can be stored in the inbox
         return inboxCapacity;
+    }
+}
+ class Mail {
+    Date date;
+    String sender;
+    String message;
+
+
+
+    public Mail(Date date, String sender, String message){
+        this.date=date;
+        this.sender=sender;
+        this.message=message;
+
     }
 }
