@@ -25,7 +25,6 @@ public class Main {
 
         gmail.deleteMail("Everything looks good.");
         System.out.println("The latest message is :" + gmail.findLatestMessage());
-        System.out.println("The oldest message is :" + gmail.findOldestMessage());
         gmail.deleteMail("Assignment to be uploaded on database.");
         System.out.println("There are " + gmail.getTrashSize() + " mails in the trash.");
         gmail.emptyTrash();
