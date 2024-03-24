@@ -9,9 +9,8 @@ public class Main {
         Email email = new Email("accio@gmail.com");
         email.changePassword("Accio@123", "V12@");
         email.changePassword("Acio@123", "V12@v");
-        System.out.println(email.getPassword());
         email.changePassword("Accio@123", "V12v@123");
-        System.out.println(email.getPassword());
+
 
         Gmail gmail = new Gmail("accio@gmail.com", 3);
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), "Tushar", "Assignment Completed?");
@@ -20,9 +19,10 @@ public class Main {
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("23/12/2022"), "Tushar", "Everything looks good.");
 
         System.out.println("Total " + gmail.getInboxSize() + " mails in inbox.");
-        System.out.println("Total " + gmail.getTrashSize() + " mails in trash.");
+
 
         System.out.println("There are " + gmail.findMailsBetweenDates(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022")) + " mails between given dates!");
+
         gmail.deleteMail("Everything looks good.");
         System.out.println("The latest message is :" + gmail.findLatestMessage());
         gmail.deleteMail("Assignment to be uploaded on database.");
